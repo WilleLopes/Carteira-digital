@@ -1,9 +1,33 @@
 
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 interface ILegendProps {
     color: string;
 }
+
+
+const animate = keyframes`
+
+0% {
+transform: translatex(-100px);
+opacity: 0;
+}
+50%{
+
+opacity: .3;
+}
+100%{
+
+transform: translatex(0px);
+opacity: 1;
+
+}
+
+
+`;
+
+
+
 
 export const Container = styled.div`
 width: 100%;
@@ -17,6 +41,8 @@ margin: 10px 0;
 padding: 30px 20px;
 
 border-radius: 10px;
+
+animation:${animate} 2.0s;
 
 > h2 {
     margin-bottom: 20px;
@@ -33,7 +59,7 @@ height: 260px;
 
 
 export const Hell = styled.header`
-width: 10;
+width: 100%;
 
 display: flex;
 justify-content: space-between;
@@ -44,6 +70,18 @@ justify-content: space-between;
     padding-left: 16px;
 }
 
+
+@media(max-width: 1270px){
+    flex-direction: column;
+}
+
+@media(max-width: 300px){
+    font-size: 15px;
+}
+        
+        
+    
+
 `;
 
 
@@ -51,6 +89,16 @@ export const LegendContainer = styled.ul`
 
 list-style: none;
 display: flex;
+
+@media(max-width: 300px){
+     
+       
+     flex-direction: column;
+     margin-top: -2px;
+
+     
+ 
+}
 
 
 `;
@@ -69,7 +117,7 @@ padding-right: 17px;
 > div {
     background-color: ${props => props.color};
 
-    width: 58px;
+    width: 28px;
     height: 40px;
     border-radius: 5px;
 
@@ -81,6 +129,30 @@ padding-right: 17px;
 
 > span {
     margin-left: 5px;
+}
+
+
+@media(max-width: 1270px){
+    > div {
+        width: 30px;
+        height: 30px;
+        margin-left: 12px;
+    }
+}
+
+
+
+@media(max-width: 300px){
+    > div {
+        width: 30px;
+        height: 15px;
+        
+        
+        
+        
+        
+        
+    }
 }
 
 `;

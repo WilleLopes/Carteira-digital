@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, {useMemo} from 'react';
+import React, { useMemo } from 'react';
 import { Container } from './styles';
 import CountUp from 'react-countup';
 //instalei isso com yarn add react-countup 
@@ -25,29 +25,27 @@ const WalletBox: React.FC<IWalletBoxProps> = ({
     color,
 }) => {
 
-const iconSelected = useMemo(() => {
-            //    if(icon === 'dollar')
-            //    return dollarImg;
+    const iconSelected = useMemo(() => {
+        //    if(icon === 'dollar')
+        //    return dollarImg;
 
-            //    if(icon === 'arrowUp')
-            //    return arrowUpImg;
+        //    if(icon === 'arrowUp')
+        //    return arrowUpImg;
 
-            //    if(icon === 'arrowDown')
-            //    return arrowDownImg;
-
-
-    switch (icon) {
-    case 'dollar':
-        return dollarImg;
-    case 'arrowUp':
-        return arrowUpImg;
-    case 'arrowDown':
-        return arrowDownImg;
-    // default:
-    //     return undefined;            
-}
+        //    if(icon === 'arrowDown')
+        //    return arrowDownImg;
 
 
+        switch (icon) {
+            case 'dollar':
+                return dollarImg;
+            case 'arrowUp':
+                return arrowUpImg;
+            case 'arrowDown':
+                return arrowDownImg;
+            // default:
+            //     return undefined;            
+        }
 
 
 
@@ -55,28 +53,30 @@ const iconSelected = useMemo(() => {
 
 
 
-},[icon]);
+
+
+    }, [icon]);
 
 
     return (
         <Container
-        color={color}
+            color={color}
         >
 
             <span>{title}</span>
             <h1>
-<CountUp
-end={amount}
-prefix={"R$ "}
-separator= "."
-decimal=","
-decimals={2}
-/>
+                <strong>R$ </strong>
+                <CountUp
+                    end={amount}
+                    separator="."
+                    decimal=","
+                    decimals={2}
+                />
 
             </h1>
             <small>{footerlabel}</small>
-            <img src={iconSelected} alt={title}/>
-        
+            <img src={iconSelected} alt={title} />
+
         </Container>
     );
 }

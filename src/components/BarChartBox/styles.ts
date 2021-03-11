@@ -1,10 +1,32 @@
 
 
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 interface ILegendProps {
     color: string;
 }
+
+
+
+const animate = keyframes`
+
+0% {
+transform: translatex(100px);
+opacity: 0;
+}
+50%{
+
+opacity: .3;
+}
+100%{
+
+transform: translatex(0px);
+opacity: 1;
+
+}
+
+
+`;
 
 export const Container = styled.div`
 
@@ -19,6 +41,16 @@ color: ${props => props.theme.colors.white};
 border-radius: 7px;
 
 display: flex;
+
+animation: ${animate} 2.0s;
+
+@media(max-width: 1200px){
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: auto;
+}
 
 `;
 
@@ -47,6 +79,8 @@ justify-content: center;
 
 padding-top: 35px;
 
+
+
 `;
 
 export const LegendContainer = styled.ul`
@@ -70,7 +104,13 @@ overflow-y: scroll;
     
 }
 
+@media(max-width: 1200px){
+    display: flex;
+    flex-direction: column;
 
+    width: 100%;
+    height: auto;
+}
 
 `;
 

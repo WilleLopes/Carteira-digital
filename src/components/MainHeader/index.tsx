@@ -1,11 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, {useMemo, useState} from 'react';
 import Toggle from '../Toggle';
+
 import emojis from '../../Utils/emojis';
 import { Container, 
          Profile, 
          Welcome, 
-         UserName, } from './styles';
+         UserName,
+          } from './styles';
 
 
    import { useTheme } from '../../hooks/theme';      

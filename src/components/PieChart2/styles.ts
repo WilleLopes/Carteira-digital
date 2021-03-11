@@ -1,10 +1,31 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 
 
 interface ILegendProps {
     color: string;
 }
+
+const animate = keyframes`
+
+0% {
+transform: translatex(100px);
+opacity: 0;
+}
+50%{
+
+opacity: .3;
+}
+100%{
+
+transform: translatex(0px);
+opacity: 1;
+
+}
+
+
+`;
+
 
 export const Container = styled.div`
 width:48%;
@@ -18,6 +39,13 @@ color: ${props => props.theme.colors.white};
 border-radius: 7px;
 
 display: flex;
+animation: ${animate} 1.5s;
+
+@media(max-width: 770px){
+    display: flex;
+    width: 100%;
+}
+
 `;
 
 
@@ -27,6 +55,23 @@ padding: 30px 20px;
 > h2 {
     margin-bottom: 20px;
 }
+animation: ${animate} .9s;
+
+@media(max-width: 1345px){
+    padding: 0 15px 5px;
+    margin-bottom: 7px;
+
+    > h2 {
+        margin-top: 15px;
+        margin-bottom: 7px;
+    }
+}
+
+@media(max-width: 420px){
+  padding: 15px;
+  margin-bottom: 7px;  
+}
+
 `;
 
 
@@ -50,8 +95,12 @@ overflow-y: scroll;
     background-color: ${props => props.theme.colors.tertiary};
     
 }
+animation: ${animate} .9s;
 
-
+@media(max-width: 1345px){
+    display: flex;
+    flex-direction: column;
+}
 
 `;
 
@@ -63,6 +112,7 @@ display: flex;
 align-items: center;
 
 margin-bottom: 7px;
+animation: ${animate} .9s;
 
 
 > div {
@@ -82,6 +132,40 @@ margin-bottom: 7px;
     margin-left: 5px;
 }
 
+@media(max-width: 1345px){
+    font-size: 14px;
+    margin: 3px 0;
+
+    > div {
+        height: 35px;
+        width: 50px;
+        line-height: 35px;
+    }
+
+> span {
+    margin-left: 7px
+}
+
+}
+
+
+@media(max-width: 290px){
+    font-size: 11px;
+    margin: 1.5px 0;
+
+    > div {
+        height: 35px;
+        width: 50px;
+        line-height: 35px;
+    }
+
+> span {
+    margin-left: 4px;
+    margin: 1px;
+}
+
+}
+
 `;
 
 
@@ -90,6 +174,18 @@ export const SideRight = styled.main`
 display: flex;
 flex: 1;
 justify-content: center;
+
+
+@media(max-width: 1345){
+    height: 100%;
+}
+
+@media(max-width: 320px){
+    height: 100%;
+    width: 40px;
+    margin-left: -50px;
+}
+
 
 `;
 

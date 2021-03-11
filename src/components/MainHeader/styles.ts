@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+
 export const Container = styled.div`
 grid-area: MH;
 /* color: ${props => props.theme.colors.white}; */
@@ -20,3 +21,5 @@ color: ${props => props.theme.colors.white};
 export const Welcome = styled.h3``;
 
 export const UserName = styled.span``;
+
+

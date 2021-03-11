@@ -44,7 +44,7 @@ const HistoryBox: React.FC<IHistoryBoxProps> = ({
 
                 <Legend color={lineColorAmountOutput}>
                     <div></div>
-                    <span>saídas</span>
+                    <span>Saídas</span>
                 </Legend>
             </LegendContainer>
         </Hell>
