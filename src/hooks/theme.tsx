@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React, { createContext, useState, useContext } from 'react';
-
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import dark from '../styles/themes/dark';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -11,7 +10,6 @@ interface IThemeContext {
     toggleTheme(): void;
     theme: ITheme;
 }
-
 interface ITheme {
     title: string;
 
@@ -31,24 +29,24 @@ interface ITheme {
     }
 
 }
-
-
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const ThemeContext = createContext<IThemeContext>({} as IThemeContext);
+
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const ThemeProvider: React.FC = ({ children }) => {
     const [theme, setTheme] = useState<ITheme>(() => {
 const themeSaved = localStorage.getItem('@carteira-online:theme');
 
-if(themeSaved) {
+  if(themeSaved) {
+    
     return JSON.parse(themeSaved);
-}else{
+  }else{
     return dark;
-}
+  }
 
     });
-
+ 
 
     const toggleTheme = () => {
         if (theme.title === 'dark') {
@@ -59,6 +57,7 @@ if(themeSaved) {
             localStorage.setItem('@carteira-online:theme', JSON.stringify(dark));
         }
     };
+
     return (
         <ThemeContext.Provider value={{ toggleTheme, theme }}>
             {children}
@@ -66,9 +65,12 @@ if(themeSaved) {
     )
 }
 
+
+
+
 function useTheme(): IThemeContext {
     const context = useContext(ThemeContext);
-
+ 
     return context;
 }
 

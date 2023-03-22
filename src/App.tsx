@@ -1,10 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';// ele usa o tema selecionado
 import Routes from './routes';
 import GlobalStyles from './styles/GlobalStyles';
-import dark from './styles/themes/dark'
 import { useTheme } from './hooks/theme';
 
 

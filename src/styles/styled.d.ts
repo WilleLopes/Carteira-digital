@@ -20,3 +20,7 @@ declare module 'styled-components' {
     },
   };
 }
+
+// isso cria uma tipagem para a aplicação de maneira global,
+//  para ficar disponível para toda a aplicação
+// nesse caso para utilizar o tema na aplicação basta usar o ThemeProvider do styled-components lá no App.tsx
