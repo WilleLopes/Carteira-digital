@@ -40,7 +40,7 @@ interface IData {
 }
 
 
-
+// match ele vem o brouserRouer
 const List: React.FC<IRouteParams> = ({ match }) => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [data, setData] = useState<IData[]>([]);
